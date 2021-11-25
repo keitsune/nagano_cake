@@ -11,15 +11,20 @@ class Admin::ItemsController < ApplicationController
   end
 
   def index
+    @items = Item.all
+    @genres = Genre.all
   end
 
   def show
+    @item = Item.find(params[:id])
+    @genres = Genre.all
   end
 
   def edit
     @item = Item.find(params[:id])
+    @genres = Genre.all
   end
-  
+
   def update
     @item = Item.find(params[:id])
     if @item.update(item_params)
