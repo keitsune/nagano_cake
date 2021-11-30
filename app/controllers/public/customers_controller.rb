@@ -8,6 +8,7 @@ class Public::CustomersController < ApplicationController
   end
 
   def update
+<<<<<<< HEAD
     @customer = current_customer
     if @customer.update
      redirect_to customers_path
@@ -25,6 +26,15 @@ class Public::CustomersController < ApplicationController
     @customer.update(is_deleted: true)
     reset_session
     redirect_to root_path
+=======
+    
+  end
+
+  def unsubscribe
+  end
+
+  def withdraw
+>>>>>>> 0c8883a683847de0535243a6a51641cdef56f7ed
   end
 
 
