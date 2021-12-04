@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     patch "customers/withdraw" => "customers#withdraw"
     put "customers/withdraw" => "customers#withdraw"
     resources :addresses, only: [:index, :create, :edit, :update, :destroy]
+    resources :items, only: [:index, :show]
   end
 
 

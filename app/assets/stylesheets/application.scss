@@ -37,3 +37,18 @@ footer {
   margin-top: 20px;
   border-top: 1px solid #000;
 }
+
+.items {
+  width: 100%;
+}
+
+.item-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.item-box {
+  width: 20%;
+  margin: 10px;
+}
+
