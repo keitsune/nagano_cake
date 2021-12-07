@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
-  namespace :public do
-    get 'items/index'
-    get 'items/show'
-  end
+
   scope module: :public do
     root 'homes#top'
     get "about" => "homes#about"
@@ -12,6 +9,11 @@ Rails.application.routes.draw do
     put "customers/withdraw" => "customers#withdraw"
     resources :addresses, only: [:index, :create, :edit, :update, :destroy]
     resources :items, only: [:index, :show]
+    resources :cart_items, only: [:index, :create, :update, :destroy] do
+      collection do
+        delete 'destroy_all'
+      end
+    end
   end
 
 
