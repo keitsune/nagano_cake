@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+
   scope module: :public do
     root 'homes#top'
     get "about" => "homes#about"
@@ -14,6 +15,11 @@ Rails.application.routes.draw do
         delete 'destroy_all'
       end
     end
+    get "orders/thanks" => "orders#thanks"
+    resources :orders, only: [:new, :create, :index, :show]
+    post "orders/confirm" => "orders#confirm"
+
+
   end
 
 
