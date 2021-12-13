@@ -8,6 +8,15 @@ class Public::OrdersController < ApplicationController
     @order = Order.new(order_params)
     @order.save
     redirect_to orders_thanks_path
+    current_customer.cart_items.each do |cart_item|
+      @order_item = OrderItem.new
+      @order_item.order_id = @order.id
+      cart_item.order_id
+      cart_item.item_id
+      cart_item.amount
+      cart_item.price
+      cart_item.making_status
+    end
   end
 
   def confirm
@@ -42,6 +51,8 @@ class Public::OrdersController < ApplicationController
   end
 
   def index
+    @orders = current_customer.orders
+    @order.status = params[:order][:status]
   end
 
   def show
