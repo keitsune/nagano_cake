@@ -1,10 +1,12 @@
 <main>
   <div class="container">
-    <h4 class="mt-3">マイページ</h4>
+    <h4>
+      <strong>マイページ</strong>
+    </h4
     <div class="row">
       <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
         <div>
-          <label for="inputName">登録情報</label>
+          <strong>登録情報</strong>
           <%= link_to edit_customers_path(current_customer) do %>
           <div class="btn btn-sm btn-success">編集する</div>
           <% end %>
@@ -51,7 +53,19 @@
             </tr>
           </tbody>
         </table>
+        <div>
+          <strong>配送先</strong>
+          <%= link_to addresses_path do %>
+            <button class="btn btn-primary">一覧を見る</button>
+          <% end %>
+        </div>
+        <div>
+          <strong>注文履歴</strong>
+          <%= link_to orders_path do %>
+            <button class="btn btn-primary">一覧を見る</button>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
- </main>
+</main>

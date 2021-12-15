@@ -34,10 +34,10 @@
               <td><%= address.name %></td>
               <td>
                 <%= link_to edit_address_path(address) do %>
-                <button class="btn-success">編集する</button>
+                <button class="btn btn-success">編集する</button>
                 <% end %>
                 <%= link_to address_path(address), method: :delete do %>
-                <button class="btn-danger">削除する</button>
+                <button class="btn btn-danger">削除する</button>
                 <% end %>
               </td>
             </tr>

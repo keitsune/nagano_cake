@@ -6,16 +6,14 @@ class Public::OrdersController < ApplicationController
 
   def create
     @order = Order.new(order_params)
-    @order.save
-    redirect_to orders_thanks_path
+    if @order.save
     current_customer.cart_items.each do |cart_item|
-      @order_item = OrderItem.new
-      @order_item.order_id = @order.id
-      cart_item.order_id
-      cart_item.item_id
-      cart_item.amount
-      cart_item.price
-      cart_item.making_status
+      @order_item = OrderItem.new(order_id: @order.id, item_id: cart_item.item_id, amount: cart_item.amount, price: cart_item.item.price)
+      @order_item.save
+    end
+      redirect_to orders_thanks_path
+    else
+      redirect_to cart_items_path
     end
   end
 
@@ -52,7 +50,7 @@ class Public::OrdersController < ApplicationController
 
   def index
     @orders = current_customer.orders
-    @order.status = params[:order][:status]
+    
   end
 
   def show
