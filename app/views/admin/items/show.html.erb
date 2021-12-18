@@ -3,7 +3,7 @@
     <h4 class="mt-3">商品詳細</h4>
     <div class="row">
         <div class="col-md-4">
-          <%= attachment_image_tag @item, :image, format: 'jpeg', size: "250x250", fallback: "no_image.jpg" %>
+          <%= attachment_image_tag @item, :image, format: 'jpeg', size: "250x200", fallback: "no_image.jpg" %>
         </div>
         <div class="col-md-8">
           <div>
@@ -21,7 +21,7 @@
           <div>
             <label for="inputName">税込価格</br>(税抜価格)</label>
             <%= @item.price %>
-            (<%= @item.price * 1.1 %>)円
+            (<%= (@item.price * 1.1).to_i %>)円
           </div>
           <div>
             <label for="inputName">販売ステータス</label>

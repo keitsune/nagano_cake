@@ -7,7 +7,7 @@
         </div>
         <div>
           <%= link_to destroy_all_cart_items_path, method: :delete do %>
-            <button class="btn-danger">カートを空にする</button>
+            <button class="btn btn-danger">カートを空にする</button>
           <% end %>
         </div>
       </div>
@@ -34,13 +34,13 @@
             <td>
               <%= form_with model: cart_item, url: cart_item_path(cart_item), local: true do |f| %>
                 <%= f.select :amount, *[1..10] %>
-                <%= f.submit "変更", class: "btn-success" %>
+                <%= f.submit "変更", class: "btn btn-success" %>
               <% end %>
             </td>
             <td><%= (cart_item.item.price * 1.1 * cart_item.amount).to_i %></td>
             <td>
               <%= link_to cart_item_path(cart_item), method: :delete do %>
-                <button class="btn-danger">削除する</button>
+                <button class="btn btn-danger">削除する</button>
               <% end %>
             </td>
           </tr>
@@ -51,8 +51,8 @@
         <div class="row">
           <div class="col d-flex justify-content-between">
             <div>
-              <%= link_to url: root_path do %>
-                <button class="btn-primary">買い物を続ける</button>
+              <%= link_to root_path do %>
+                <button class="btn btn-primary">買い物を続ける</button>
               <% end %>
             </div>
             <div>
@@ -73,7 +73,7 @@
               <div class="col d-flex justify-content-center">
                 <div>
                   <%= link_to new_order_path do %>
-                    <button class="btn-success">情報入力に進む</button>
+                    <button class="btn btn-success">情報入力に進む</button>
                   <% end %>
                 </div>
               </div>

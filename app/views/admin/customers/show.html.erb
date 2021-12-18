@@ -1,0 +1,65 @@
+<main>
+  <div class="container">
+    <h4>
+    <strong><%= @customer.last_name + @customer.first_name %></strong>
+    さんの
+    <strong>会員詳細</strong>
+    </h4>
+    <div class="row">
+      <div class="col-8">
+        <table>
+          <tbody>
+            <tr>
+              <td class="pr-5" style="height: 30px;">会員ID</td>
+              <td><%= @customer.id %></td>
+            </tr>
+            <tr>
+              <td class="pr-5" style="height: 30px;">氏名</td>
+              <td><%= @customer.last_name + @customer.first_name %></td>
+            </tr>
+            <tr>
+              <td class="pr-5" style="height: 30px;">フリガナ</td>
+              <td><%= @customer.last_name_kana + @customer.first_name_kana %></td>
+            </tr>
+            <tr>
+              <td class="pr-5" style="height: 30px;">郵便番号</td>
+              <td><%= @customer.postal_code %></td>
+            </tr>
+            <tr>
+              <td class="pr-5" style="height: 30px;">住所</td>
+              <td><%= @customer.address %></td>
+            </tr>
+            <tr>
+              <td class="pr-5" style="height: 30px;">電話番号</td>
+              <td><%= @customer.telephone_number %></td>
+            </tr>
+            <tr>
+              <td class="pr-5" style="height: 30px;">メールアドレス</td>
+              <td><%= @customer.email %></td>
+            </tr>
+            <tr>
+              <td class="pr-5" style="height: 30px;">会員ステータス</td>
+              <% if @customer.is_deleted %>
+                <td>退会</td>
+              <% else %>
+                <td>有効</td>
+              <% end %>
+            </tr>
+            <tr>
+              <td class="pr-5" style="height: 50px;"></td>
+              <td>
+                <%= link_to edit_admin_customer_path(@customer) do %>
+                  <button class="btn btn-success">編集する</button>
+                <% end %>
+              </td>
+              <td>
+                <!--リンク先をいれる-->
+                <button class="btn btn-primary">注文履歴一覧を見る</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</main>
