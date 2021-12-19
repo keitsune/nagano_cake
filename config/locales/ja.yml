@@ -14,3 +14,8 @@ ja:
         under_production: '制作中'
         preparing_to_ship: '発送準備中'
         sent: '発送済み'
+        
+# ja:
+#   time:
+#     formats:
+#       default: "%Y/%m/%d %H:%M:%S"

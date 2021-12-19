@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
 
   
+ 
   scope module: :public do
     root 'homes#top'
     get "about" => "homes#about"
@@ -32,6 +33,7 @@ Rails.application.routes.draw do
   devise_for :admins
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   namespace :admin do
+    root 'homes#top'
     resources :genres, only: [:index, :create, :edit, :update]
     resources :items, only: [:new, :index, :create, :show, :edit, :update]
     resources :customers, only: [:index, :show, :edit, :update]

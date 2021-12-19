@@ -1,0 +1,50 @@
+<main>
+  <div class="container">
+    <strong>注文履歴一覧</strong>
+    <div class="row">
+      <div class="col-8">
+        <table class="table">
+          <thead>
+            <th>購入日時</th>
+            <th>購入者</th>
+            <th>注文個数</th>
+            <th>注文ステータス</th>
+          </thead>
+          <tbody>
+            <% @orders.each do |order| %>
+            <tr>
+              <td>
+                <!--注文履歴詳細のリンク-->
+                <%= order.created_at.strftime('%Y/%m/%d %H:%M:%S') %>
+              </td>
+              <td>
+                <%= order.name %>
+              </td>
+              <td>
+                <% @amount = 0 %>
+                <% order.order_items.each do |order_item| %>
+                  <% @amount += order_item.amount %>
+                <% end %>
+                <%= @amount %>
+              </td>
+              <td>
+                <% if order.status == 'waiting_for_deposit' %>
+                  入金待ち
+                <% elsif order.status == 'payment_confirmation' %>
+                  入金確認
+                <% elsif order.status == 'under_production' %>
+                  制作中
+                <% elsif order.status == 'preparing_to_ship' %>
+                  発送準備中
+                <% elsif order.status == 'sent' %>
+                  発送済み
+                <% end %>
+              </td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</main>
