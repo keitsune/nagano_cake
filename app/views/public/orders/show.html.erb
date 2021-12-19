@@ -68,7 +68,7 @@
             <tr>
               <td bgcolor="#eee">ご請求金額</td>
                 <td>
-                  <%= @order.total_payment %>
+                  <%= @sum + @order.shipping_cost %>
                 </td>
             </tr>
           </table>
