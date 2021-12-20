@@ -18,6 +18,31 @@
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 
+main {
+  width: 100%;
+}
+
+
+.top{
+  width: 700px;
+  height: 300px;
+  margin: 20px auto;
+  background-image: image-url("cakes-ged81f5101_1280.jpg");
+}
+
+.top-text {
+  width: 500px;
+  height: 150px;
+  background-color: #ddd;
+  margin: 100px;
+  padding: 20px 10px;
+  display: inline-block;
+}
+
+.about {
+  text-align: center;
+}
+
 
 .field {
   margin-bottom: 10px;
@@ -46,6 +71,11 @@ footer {
   width: 100%;
 }
 
+.top-item {
+  width: 700px;
+  margin: 0 auto;
+}
+
 .item-wrap {
   display: flex;
   flex-wrap: wrap;
@@ -55,6 +85,7 @@ footer {
   width: 20%;
   margin: 10px;
 }
+
 
 .thanks {
   height: 200px;
