@@ -46,22 +46,29 @@
       </div>
       <div class="container">
         <div class="row">
-          <h4>支払方法</h4>
-            <% if @order.payment_method == 'credit_card' %>
-            クレジットカード
-            <% elsif @order.payment_method == 'transfer' %>
-            銀行振込
-            <% end %>
-          <div>
-        </div>
-      </div>
-      <div class="container">
-        <div class="row">
-          <h4>お届け先</h4>
-          〒<%= @order.postal_code %>
-          <%= @order.address %>
-          </br>
-          <%= @order.name %>
+          <table>
+            <tr>
+              <td class="pr-5" style="height: 30px;">
+                <strong>支払方法</strong>
+              </td>
+              <% if @order.payment_method == 'credit_card' %>
+                <td>クレジットカード</td>
+              <% elsif @order.payment_method == 'transfer' %>
+                <td>銀行振込</td>
+              <% end %>
+            </tr>
+            <tr>
+              <td class="pr-5" style="height: 30px;">
+                <strong>お届け先</strong>
+              </td>
+              <td>
+                〒<%= @order.postal_code %>
+                <%= @order.address %>
+                </br>
+                <%= @order.name %>
+              </td>
+            </tr>
+          </table>
         </div>
       </div>
       <div class="container">
@@ -77,7 +84,7 @@
                 <%= f.hidden_field :shipping_cost %>
                 <%= f.hidden_field :total_payment %>
                 <%= f.hidden_field :status %>
-                <%= f.submit "注文を確定する" %>
+                <%= f.submit "注文を確定する", class: "btn btn-success" %>
               <% end %>
             </div>
           </div>

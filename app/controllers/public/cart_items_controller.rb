@@ -1,4 +1,5 @@
 class Public::CartItemsController < ApplicationController
+  before_action :authenticate_customer!
 
   before_action :correct_customer_destroy_all, only: :destroy_all
 

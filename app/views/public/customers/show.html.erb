@@ -1,70 +1,84 @@
 <main>
   <div class="container">
-    <h4>
-      <strong>マイページ</strong>
-    </h4
     <div class="row">
-      <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
-        <div>
-          <strong>登録情報</strong>
-          <%= link_to edit_customers_path(current_customer) do %>
-          <div class="btn btn-sm btn-success">編集する</div>
-          <% end %>
-        </div>
-        <table class="table">
+      <div class="col-8">
+        <strong>マイページ</strong>
+        <table>
+          <tr>
+            <td class="pr-5" style="height: 30px;">
+              <strong>登録情報</strong>
+            </td>
+            <td>
+              <%= link_to edit_customers_path(current_customer) do %>
+              <button class="btn btn-sm btn-success">編集する</button>
+              <% end %>
+            </td>
+          </tr>
+        </table>
+        <table class="table table-bordered">
           <tbody>
             <tr>
-              <th>氏名</th>
+              <th class="pr-5" style="height: 30px;">氏名</th>
               <td>
                 <%= @customer.last_name %>
                 <%= @customer.first_name %>
               </td>
             </tr>
             <tr>
-              <th>カナ</th>
+              <th class="pr-5" style="height: 30px;">カナ</th>
               <td>
                 <%= @customer.last_name_kana %>
                 <%= @customer.first_name_kana %>
               </td>
             </tr>
             <tr>
-              <th>郵便番号</th>
+              <th class="pr-5" style="height: 30px;">郵便番号</th>
               <td>
                 <%= @customer.postal_code %>
               </td>
             </tr>
             <tr>
-              <th>住所</th>
+              <th class="pr-5" style="height: 30px;">住所</th>
               <td>
                 <%= @customer.address %>
               </td>
             </tr>
             <tr>
-              <th>電話番号</th>
+              <th class="pr-5" style="height: 30px;">電話番号</th>
               <td>
                 <%= @customer.telephone_number %>
               </td>
             </tr>
             <tr>
-              <th>メールアドレス</th>
+              <th class="pr-5" style="height: 30px;">メールアドレス</th>
               <td>
                 <%= @customer.email %>
               </td>
             </tr>
           </tbody>
         </table>
-        <div>
-          <strong>配送先</strong>
-          <%= link_to addresses_path do %>
-            <button class="btn btn-primary">一覧を見る</button>
-          <% end %>
-        </div>
-        <div>
-          <strong>注文履歴</strong>
-          <%= link_to orders_path(@customer) do %>
-            <button class="btn btn-primary">一覧を見る</button>
-          <% end %>
-        </div>
+        <table>
+          <tr>
+            <td class="pr-5" style="height: 30px;">
+              <strong>配送先</strong>
+            </td>
+            <td>
+              <%= link_to addresses_path do %>
+                <button class="btn btn-primary">一覧を見る</button>
+              <% end %>
+            </td>
+          </tr>
+          <tr>
+            <td class="pr-5" style="height: 30px;">
+              <strong>注文履歴</strong>
+            </td>
+            <td>
+            <%= link_to orders_path(@customer) do %>
+              <button class="btn btn-primary">一覧を見る</button>
+            <% end %>
+            </td>
+          </tr>
+        </table>
       </div>
     </div>
   </div>

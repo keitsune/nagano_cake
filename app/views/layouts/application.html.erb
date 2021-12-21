@@ -13,65 +13,100 @@
 
       <nav class="navbar navbar-expand-lg ">
         <div class="container">
-        <%= link_to root_path do %>
-          <button class="btn btn-default border border-dark">logo</button>
-        <% end %>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ml-auto">
-
-            <% if customer_signed_in? %>
-
-              <li>
-                <%= link_to customers_path do %>
-                  <button class="btn btn-default border border-dark">マイページ</button>
-                <% end %>
-              </li>
-
-              <li>
-                <%= link_to items_path do %>
-                  <button class="btn btn-default border border-dark">商品一覧</button>
-                <% end %>
-              </li>
-
-              <li>
-                <%= link_to cart_items_path do %>
-                  <button class="btn btn-default border border-dark">カート</button>
-                <% end %>
-              </li>
-
-              <li>
-                <%= link_to destroy_customer_session_path, method: :delete do %>
-                  <button class="btn btn-default border border-dark">ログアウト</button>
-                <% end %>
-              </li>
-            <% else %>
-              <li>
-                <%= link_to about_path do %>
-                  <button class="btn btn-default border border-dark">About</button>
-                <% end %>
-              </li>
-
-              <li>
-                <%= link_to items_path do %>
-                  <button class="btn btn-default border border-dark">商品一覧</button>
-                <% end %>
-              </li>
-              <li>
-                <%= link_to new_customer_registration_path do %>
-                  <button class="btn btn-default border border-dark">新規登録</button>
-                <% end %>
-              </li>
-              <li>
-                <%= link_to new_customer_session_path do %>
-                  <button class="btn btn-default border border-dark">ログイン</button>
-                <% end %>
-              </li>
-            <% end %>
-          </ul>
-        </div>
+          <%= link_to root_path do %>
+            <button class="btn btn-default border border-dark">logo</button>
+          <% end %>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+  
+              <% if customer_signed_in? %>
+              
+                <li>
+                  <p>ようこそ、<%= current_customer.last_name %>さん！</p>
+                </li>
+  
+                <li>
+                  <%= link_to customers_path do %>
+                    <button class="btn btn-default border border-dark">マイページ</button>
+                  <% end %>
+                </li>
+  
+                <li>
+                  <%= link_to items_path do %>
+                    <button class="btn btn-default border border-dark">商品一覧</button>
+                  <% end %>
+                </li>
+  
+                <li>
+                  <%= link_to cart_items_path do %>
+                    <button class="btn btn-default border border-dark">カート</button>
+                  <% end %>
+                </li>
+  
+                <li>
+                  <%= link_to destroy_customer_session_path, method: :delete do %>
+                    <button class="btn btn-default border border-dark">ログアウト</button>
+                  <% end %>
+                </li>
+              <% elsif if admin_signed_in? %>
+                <li>
+                  <%= link_to admin_items_path do %>
+                    <button class="btn btn-default border border-dark">商品一覧</button>
+                  <% end %>
+                </li>
+                
+                <li>
+                  <%= link_to admin_customers_path do %>
+                    <button class="btn btn-default border border-dark">会員一覧</button>
+                  <% end %>
+                </li>
+  
+                <li>
+                  <%= link_to admin_root_path do %>
+                    <button class="btn btn-default border border-dark">注文履歴一覧</button>
+                  <% end %>
+                </li>
+                
+                <li>
+                  <%= link_to admin_genres_path do %>
+                    <button class="btn btn-default border border-dark">ジャンル一覧</button>
+                  <% end %>
+                </li>
+  
+                <li>
+                  <%= link_to destroy_admin_session_path, method: :delete do %>
+                    <button class="btn btn-default border border-dark">ログアウト</button>
+                  <% end %>
+                </li>
+              <% else %>
+                <li>
+                  <%= link_to about_path do %>
+                    <button class="btn btn-default border border-dark">About</button>
+                  <% end %>
+                </li>
+  
+                <li>
+                  <%= link_to items_path do %>
+                    <button class="btn btn-default border border-dark">商品一覧</button>
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to new_customer_registration_path do %>
+                    <button class="btn btn-default border border-dark">新規登録</button>
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to new_customer_session_path do %>
+                    <button class="btn btn-default border border-dark">ログイン</button>
+                  <% end %>
+                </li>
+              <% end %>
+              <% end %>
+            </ul>
+          </div>
         </div>
       </nav>
     </header>

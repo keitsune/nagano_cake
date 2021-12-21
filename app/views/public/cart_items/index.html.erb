@@ -3,12 +3,24 @@
     <div class="row">
       <div class="col d-flex justify-content-between">
         <div>
-          <h4>ショッピングカート</h4>
+          <table>
+            <tr>
+              <td class="pr-5" style="height: 30px;">
+                <strong>ショッピングカート</strong>
+              </td>
+            </tr>
+          </table>
         </div>
         <div>
-          <%= link_to destroy_all_cart_items_path, method: :delete do %>
-            <button class="btn btn-danger">カートを空にする</button>
-          <% end %>
+          <table>
+            <tr>
+              <td class="pr-5" style="height: 30px;">
+                <%= link_to destroy_all_cart_items_path, method: :delete do %>
+                  <button class="btn btn-danger">カートを空にする</button>
+                <% end %>
+              </td>
+            </tr>
+          </table>
         </div>
       </div>
     </div>
