@@ -9,9 +9,11 @@ class Public::OrdersController < ApplicationController
     @order = Order.new(order_params)
     if @order.save
     current_customer.cart_items.each do |cart_item|
-      @order_item = OrderItem.new(order_id: @order.id, item_id: cart_item.item_id, amount: cart_item.amount, price: cart_item.item.price)
+      @order_item = OrderItem.new(order_id: @order.id, item_id: cart_item.item_id, amount: cart_item.amount, price: cart_item.item.price * 1.1)
       @order_item.save
     end
+      @cart_items = current_customer.cart_items
+      @cart_items.destroy_all
       redirect_to orders_thanks_path
     else
       redirect_to cart_items_path
@@ -58,8 +60,8 @@ class Public::OrdersController < ApplicationController
     @order = Order.find(params[:id])
     @cart_items = current_customer.cart_items
      @sum = 0
-     @cart_items.each do |cart_item|
-      @sum += (cart_item.item.price * 1.1 * cart_item.amount).to_i
+     @order.order_items.each do |order_item|
+      @sum += (order_item.price) * (order_item.amount)
      end
   end
 

@@ -1,6 +1,19 @@
 <main>
   <div class="container">
-    <strong>商品一覧</strong>
+    <div class="row">
+      <div class="col-8 d-flex justify-content-between">
+        <div>
+          <strong>商品一覧</strong>
+        </div>
+        <div>
+          <%= link_to new_admin_item_path do %>
+            ＋
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
     <div class="row">
       <div class="col-8">
         <table class="table">

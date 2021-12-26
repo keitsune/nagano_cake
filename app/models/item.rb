@@ -5,9 +5,9 @@ class Item < ApplicationRecord
   attachment :image
   
   validates :name, presence: true
-  validates :image_id, presence: true
+  validates :image, presence: true
   validates :introduction, presence: true
   validates :price, presence: true
-  validates :is_active, presence: true
+  validates :is_active, inclusion: [true, false]
 
 end

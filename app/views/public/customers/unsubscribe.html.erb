@@ -1,21 +1,19 @@
-<<<<<<< HEAD
+
 <main>
-  <div>
-    <h3>本当に退会しますか？</h3>
-    <div>
+  <div class="box">
+    <div class="text">
+      <h3>本当に退会しますか？</h3>
+    </div>
+    <div class="text">
       <p>
         退会すると会員登録情報や</br>
         これまでの購入履歴が閲覧できなくなります。</br>
         退会する場合は、「退会する」をクリックしてください。
       </p>
     </div>
-    <div>
+    <div class="text">
       <%= link_to "退会しない", customers_path(@customer), class: "btn btn-primary" %>
-      <%= link_to "退会する", customers_withdraw_path(@customer), method: :patch, class: "btn btn-danger" %>
+      <%= link_to "退会する", customers_withdraw_path(@customer), method: :patch, data: {confirm: "本当に退会しますか？"}, class: "btn btn-danger" %>
     </div>
   </div>
 </main>
-=======
-<h1>Public::Customers#unsubscribe</h1>
-<p>Find me in app/views/public/customers/unsubscribe.html.erb</p>
->>>>>>> 0c8883a683847de0535243a6a51641cdef56f7ed

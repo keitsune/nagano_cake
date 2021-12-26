@@ -6,18 +6,19 @@
         <tbody>
           <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           <tr>
-            <tdclass="pr-5" style="height: 30px;">メールアドレス</td>
+            <td class="pr-5" style="height: 30px;">メールアドレス</td>
             <td>
               <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
             </td>
           </tr>
           <tr>
-            <tdclass="pr-5" style="height: 30px;">パスワード</td>
+            <td class="pr-5" style="height: 30px;">パスワード</td>
             <td>
               <%= f.password_field :password, autocomplete: "current-password" %>
             </td>
           </tr>
           <tr>
+            <td class="pr-5" style="height: 30px;"></td>
             <td>
               <%= f.submit "ログイン", class: "btn btn-success" %>
             </td>

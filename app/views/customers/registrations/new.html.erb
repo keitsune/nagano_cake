@@ -1,56 +1,73 @@
 <div class="container">
-    <div class="row">
-      <div class="col-sm-12 col-md-8 col-lg-9 px-5 px-sm-0 mx-auto">
-        <h4 class="mt-3">新規会員登録</h4>
+  <h4 class="mt-3">新規会員登録</h4>
+
         <%= form_with model: @customer, url: customer_registration_path, local: true do |f| %>
           <%= render "customers/shared/error_messages", resource: resource %>
-
-          <div class="field">
-            <%= f.label "名前" %>
-            (姓)<%=f.text_field :last_name, autofocus: true, autocomplete: "last_name" %> (名)<%= f.text_field :first_name, autofocus: true, autocomplete: "first_name" %>
-          </div>
-
-          <div class="field">
-            <%= f.label "フリガナ" %>
-            (セイ)<%= f.text_field :last_name_kana, autofocus: true, autocomplete: "last_name_kana" %> (メイ)<%= f.text_field :first_name_kana, autofocus: true, autocomplete: "first_name_kana" %>
-          </div>
-
-          <div class="field">
-            <%= f.label "メールアドレス" %>
-            <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-          </div>
-
-          <div class="field">
-            <%= f.label "郵便番号(ハイフンなし)" %>
-            <%= f.text_field :postal_code, autofocus: true, autocomplete: "pastal_code" %>
-          </div>
-
-          <div class="field">
-            <%= f.label "住所" %>
-            <%= f.text_field :address, autofocus: true, autocomplete: "address" %>
-          </div>
-
-          <div class="field">
-            <%= f.label "電話番号(ハイフンなし)" %>
-            <%= f.text_field :telephone_number, autofocus: true, autocomplete: "telephone_number" %>
-          </div>
-
-          <div class="field">
-            <%= f.label "パスワード(6文字以上)" %>
-            <%= f.password_field :password, autocomplete: "new-password" %>
-          </div>
-
-          <div class="field">
-            <%= f.label "パスワード(確認用)" %>
-            <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-          </div>
-
-          <div class="actions">
-            <%= f.submit "新規登録", class: "btn btn-success" %>
-          </div>
+          <table>
+            <tbody>
+              <tr>
+                <td class="pr-5" style="height: 30px;">名前</td>
+                <td class="pr-5" style="height: 30px;">
+                  (姓)<%=f.text_field :last_name, autofocus: true, autocomplete: "last_name" %>
+                </td>
+                <td>
+                  (名)<%= f.text_field :first_name, autofocus: true, autocomplete: "first_name" %>
+                </td>
+              </tr>
+              <tr>
+                <td class="pr-5" style="height: 30px;">フリガナ</td> 
+                <td class="pr-5" style="height: 30px;">
+                  (セイ)<%= f.text_field :last_name_kana, autofocus: true, autocomplete: "last_name_kana" %>
+                </td>
+                <td>
+                  (メイ)<%= f.text_field :first_name_kana, autofocus: true, autocomplete: "first_name_kana" %>
+                </td>
+              </tr>
+              <tr>
+                <td class="pr-5" style="height: 30px;">メールアドレス</td>
+                <td>
+                  <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+                </td>
+              </tr>
+              <tr>
+                <td class="pr-5" style="height: 30px;">郵便番号(ハイフンなし)</td>
+                <td>
+                  <%= f.text_field :postal_code, autofocus: true, autocomplete: "pastal_code", class: "col-8" %>
+                </td>
+              </tr>
+              <tr>
+                <td class="pr-5" style="height: 30px;">住所</td>
+                <td>
+                  <%= f.text_field :address, autofocus: true, autocomplete: "address" %>
+                </td>
+              </tr>
+              <tr>
+                <td class="pr-5" style="height: 30px;">電話番号(ハイフンなし)</td>
+                <td>
+                  <%= f.text_field :telephone_number, autofocus: true, autocomplete: "telephone_number" %>
+                </td>
+              </tr>
+              <tr>
+                <td class="pr-5" style="height: 30px;">パスワード(６文字以上)</td>
+                <td>
+                  <%= f.password_field :password, autocomplete: "new-password" %>
+                </td>
+              </tr>
+              <tr>
+                <td class="pr-5" style="height: 30px;">パスワード(確認用)</td>
+                <td>
+                  <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+                </td>
+              </tr>
+              <tr>
+                <td class="pr-5" style="height: 30px;"></td>
+                <td>
+                  <%= f.submit "新規登録", class: "btn btn-success" %>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         <% end %>
-      </div>
-    </div>
     <div class="row">
       <div class="col-sm-12 col-md-8 col-lg-9 px-5 px-sm-0 mx-auto">
         <h4 class="mt-3">既に登録済みの方</h4>
