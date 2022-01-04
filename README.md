@@ -1,24 +1,7 @@
-# README
+# Kids Mama
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## サイト概要
+忙しい主婦が、日常の洗濯や洗い物などの家事を子供に手伝ってもらうことで、
+楽になり、お手伝いごとにポイント数を決めて、ご褒美ごとの合計のポイント数
+に到達したときに、子供にご褒美を買ってあげる、子供も楽しくて、主婦も楽が
+できるサイト
